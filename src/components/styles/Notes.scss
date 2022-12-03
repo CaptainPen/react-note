@@ -1,0 +1,81 @@
+$header-color: rgba(245, 191, 53, 0.74);
+$body-color: rgba(246, 196, 69, 0.582);
+$box-shadow-color: rgba(13, 17, 21, 0.2);
+$primary-color: #000;
+
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.note {
+  margin: 20px;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  background-color: $body-color;
+  -webkit-box-shadow: 4px 4px 5px 2px $box-shadow-color;
+  -moz-box-shadow: 4px 4px 5px 2px $box-shadow-color;
+  box-shadow: 4px 4px 5px 2px $box-shadow-color;
+  border: 1px solid $box-shadow-color;
+  border-radius: 1.2rem;
+  overflow: hidden;
+
+  .note-header {
+    padding: 15px 20px;
+    background-color: $header-color;
+    text-align: right;
+
+    .note-header-save {
+      font-size: 20px;
+      color: $primary-color;
+      cursor: pointer;
+    }
+
+    .note-btn {
+      .note-header-edit {
+        padding-right: 20px;
+        display: inline;
+        font-size: 20px;
+        color: $primary-color;
+        cursor: pointer;
+      }
+
+      .note-header-delete {
+        display: inline;
+        font-size: 20px;
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .note-body {
+    padding: 15px;
+
+    textarea {
+      height: 300px;
+      width: 100%;
+      white-space: pre-wrap;
+      background: transparent;
+      border: none;
+      color: $primary-color;
+      resize: none;
+      font-size: 18px;
+    }
+
+    textarea:focus {
+      outline: none;
+    }
+
+    textarea::placeholder {
+      color: rgba(0, 0, 0, 0.527);
+    }
+
+    span {
+      white-space: break-spaces;
+    }
+  }
+}

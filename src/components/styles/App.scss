@@ -1,0 +1,18 @@
+@import "reset";
+
+.header {
+  display: flex;
+  margin: 10px 0px;
+  width: 100%;
+  justify-content: center;
+
+  .container {
+    width: 80vw;
+
+    h1 {
+      font-size: 38px;
+      font-family: "Montserrat";
+      font-weight: 400;
+    }
+  }
+}
