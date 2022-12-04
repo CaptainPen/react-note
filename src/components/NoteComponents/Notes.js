@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/Form.scss";
 import "../styles/Notes.scss";
 import CreateNote from "./CreateNote";
@@ -45,7 +45,7 @@ const Notes = () => {
     });
     //data replacement
     notes.map((note) => {
-      if (note.id == id) {
+      if (note.id === id) {
         note.text = inputText;
         note.tags = tags;
         setInputText("");
