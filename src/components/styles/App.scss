@@ -1,10 +1,13 @@
 @import "reset";
 
 .header {
+  background-color: #eef4ff;
+  position: fixed;
   display: flex;
-  margin: 10px 0px;
+  padding: 10px 0px;
   width: 100%;
   justify-content: center;
+  z-index: 3;
 
   .container {
     width: 80vw;

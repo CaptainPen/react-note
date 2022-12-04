@@ -22,13 +22,24 @@ $primary-color: #000;
   border: 1px solid $box-shadow-color;
   border-radius: 1.2rem;
   overflow: hidden;
+  position: relative;
 
   .note-header {
     padding: 15px 20px;
     background-color: $header-color;
     text-align: right;
 
+    h3 {
+      font-size: 23px;
+      font-family: "Montserrat";
+      font-weight: 400;
+      color: rgba(22, 18, 12, 0.795);
+      position: absolute;
+      display: flex;
+    }
+
     .note-header-save {
+      display: inline;
       font-size: 20px;
       color: $primary-color;
       cursor: pointer;
@@ -75,7 +86,20 @@ $primary-color: #000;
     }
 
     span {
-      white-space: break-spaces;
+      font-size: 18px;
+      color: $primary-color;
+      width: 100%;
+      resize: none;
+      white-space: pre-wrap;
     }
+  }
+
+  .note-footer {
+    padding: 15px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    font-size: 20px;
+    font-weight: bold;
   }
 }

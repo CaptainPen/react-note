@@ -4,7 +4,12 @@ const CreateNote = ({ textHandler, saveHandler, inputText }) => {
   return (
     <div className="note">
       <div className="note-header">
-        <div className="note-header-save" onClick={saveHandler}>
+        <h3>Create and edit a note</h3>
+        <div
+          className="note-header-save"
+          title="Pin a note"
+          onClick={saveHandler}
+        >
           <SlPin />
         </div>
       </div>
@@ -18,7 +23,7 @@ const CreateNote = ({ textHandler, saveHandler, inputText }) => {
           value={inputText}
           placeholder="Type..."
           onChange={textHandler}
-          /* maxLength="100" */
+          maxLength="360"
         ></textarea>
       </div>
     </div>
