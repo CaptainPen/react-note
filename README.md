@@ -1,4 +1,4 @@
-# react Notes App
+# React Notes App
 
 A one-page application on React: a text editor of notes with tags.
 
