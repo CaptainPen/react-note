@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Form.scss";
 import "../styles/Notes.scss";
 import CreateNote from "./CreateNote";
@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 
 const Notes = () => {
   //states
-  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem(`notes`)) || []);
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem(`Notes`)) || []);
   const [inputText, setInputText] = useState("");
   const [value, setValue] = useState("");
 
@@ -31,8 +31,6 @@ const Notes = () => {
         tags: tags,
       },
     ]);
-    //save localStorage
-    setLocalStorage(notes);
     //clear the textarea
     setInputText("");
   };
@@ -61,8 +59,6 @@ const Notes = () => {
     const filteredNotes = notes.filter((note) => note.id !== id);
     //store in state
     setNotes(filteredNotes);
-    //save localStorage
-    setLocalStorage(filteredNotes);
   };
 
   //tag search
@@ -76,10 +72,13 @@ const Notes = () => {
     return note.tags.join("").toLowerCase().includes(resultValue);
   });
 
-  //the function of saving to localStorage
-  const setLocalStorage = (dataNotes) => {
-    localStorage.setItem(`notes`, JSON.stringify(dataNotes));
+    const setLocalStorage = (dataNotes) => {
+    localStorage.setItem(`Notes`, JSON.stringify(dataNotes));
   };
+
+  //localStorages
+  useEffect ( () => { 
+    localStorage.setItem ( `Notes` , JSON.stringify ( notes ) ); }, [notes ] ) ;  
 
   return (
     <div className="wrapper">
